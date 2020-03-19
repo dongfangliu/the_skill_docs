@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SkillNode &mdash; The Skill 1.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="NodeLib" href="nodeLib.html" />
+    <link rel="prev" title="LifeCycle of a Skill Node" href="lifecycle.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> The Skill
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="brief_intro.html">Brief Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detail.html">Detailed description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skill_behave.html">What may a skill behave? (Not essential but helpful)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Structure of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">WorkFlow of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attribute_table.html">Description: AttributeTable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lifecycle.html">LifeCycle of a Skill Node</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SkillNode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#skilltype-and-nodetype">SkillType and NodeType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#emitobj-and-related">EmitObj and related</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#emitobjprefabs-emitobjtemps">EmitObjPrefabs &amp;&amp; EmitObjTemps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bootmode">BootMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emitobjrelation">EmitObjRelation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rendertriggers">RenderTriggers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#when-will-the-emitobj-be-triggered">When will the EmitObj be triggered?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-condition-of-entering-onskillplaying">The condition of entering OnSkillPlaying()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#other-properties">Other properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-create-a-skill-node">How to create a Skill Node?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nodeLib.html">NodeLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillLearningTree.html">SkillLearningTree &amp;&amp; LTNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillEquipMgr.html">SkillEquipManager &amp;&amp; PracticalNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="last_step.html">Last Step: Simple scripts that you need to create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Expected acts and Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The Skill</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>SkillNode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/skillNode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="skillnode">
+<h1>SkillNode<a class="headerlink" href="#skillnode" title="Permalink to this headline">¶</a></h1>
+<p>First have an overview of the SkillNode Inspector…</p>
+<div class="figure align-default">
+<img alt="1517552627005" src="_images/1517552627005.png" />
+</div>
+<p>First , you may observe there are so many properties for a skill node.</p>
+<div class="section" id="skilltype-and-nodetype">
+<h2>SkillType and NodeType<a class="headerlink" href="#skilltype-and-nodetype" title="Permalink to this headline">¶</a></h2>
+<p>I would explain SkillType and NodeType First.</p>
+<p>When set <code class="docutils literal notranslate"><span class="pre">SkillType</span> <span class="pre">==</span> <span class="pre">Directional</span></code>, it means the <code class="docutils literal notranslate"><span class="pre">EmitObj</span></code> will
+only be emitted to certain position, if <code class="docutils literal notranslate"><span class="pre">SkillType</span> <span class="pre">==</span> <span class="pre">Tracking</span></code>,You
+should further make use of the <code class="docutils literal notranslate"><span class="pre">EmitUpdate()</span></code> to ensure tracking. See
+the skill example of <code class="docutils literal notranslate"><span class="pre">ghostTrack</span></code> in the wizard sample.</p>
+<p>As mentioned before, if <code class="docutils literal notranslate"><span class="pre">NodeType</span> <span class="pre">==</span> <span class="pre">ActiveNode</span></code>,it can should be
+triggerd by your trigger script,else if <code class="docutils literal notranslate"><span class="pre">NodeType</span> <span class="pre">==</span> <span class="pre">PassiveNode</span></code>,it
+will be triggered automatically when it satisfies the condition you
+setted and it won’t reply to your command (it’s managed automatically by
+the <code class="docutils literal notranslate"><span class="pre">SkillEquipManager</span></code> ).</p>
+<p>Then i would like to talk about the concept <code class="docutils literal notranslate"><span class="pre">EmitObj</span></code> and
+<code class="docutils literal notranslate"><span class="pre">EmitObjPrefabs</span></code>.</p>
+<p>Take the wizard’s expamble again , the fireball emited may collide with
+other objects on its path to the Goblin, should it boom or not ?</p>
+</div>
+<div class="section" id="emitobj-and-related">
+<h2>EmitObj and related<a class="headerlink" href="#emitobj-and-related" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="emitobjprefabs-emitobjtemps">
+<h3>EmitObjPrefabs &amp;&amp; EmitObjTemps<a class="headerlink" href="#emitobjprefabs-emitobjtemps" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">EmitObjPrefabs</span></code> and <code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> are both <code class="docutils literal notranslate"><span class="pre">List&lt;GameObjects&gt;</span></code>.</p>
+<p>EmitObj can be any gameobject that are required to be emitted during the
+posscess <code class="docutils literal notranslate"><span class="pre">EmitObjWithITween</span></code>of skill casting, such as particle
+system, meshes and so on.</p>
+<p><code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> are generated from <code class="docutils literal notranslate"><span class="pre">EmitObjPrefabs</span></code> each time the
+skill is being cast. <code class="docutils literal notranslate"><span class="pre">EmitObjPrefabs</span></code> should never be touched during
+skill casting, instead, <code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> is a better choice.</p>
+<p><code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> will not be automatically destoryed after a skill is
+casted in case that developers have any arrangement for them. If not ,
+just destroy them manually in <code class="docutils literal notranslate"><span class="pre">OnSkillExiting()</span></code>.</p>
+<p>If corresponding <code class="docutils literal notranslate"><span class="pre">EmitObjPrefabs</span></code> do not have a <code class="docutils literal notranslate"><span class="pre">Collider</span></code> or
+<code class="docutils literal notranslate"><span class="pre">EmitObj.cs</span></code> attached, <code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> are guarenteed to have them by
+adding a <code class="docutils literal notranslate"><span class="pre">SphereCollider(isTrigger</span> <span class="pre">=</span> <span class="pre">true)</span></code> and <code class="docutils literal notranslate"><span class="pre">EmitObj.cs</span></code>.</p>
+<div class="figure align-default">
+<img alt="1519787436955" src="_images/1519787436955.png" />
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Collider</span></code> component attached on the <code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> are used to
+render objects that are affected by this skill. <code class="docutils literal notranslate"><span class="pre">Collider</span></code> renders
+objects based on its shape,location,<code class="docutils literal notranslate"><span class="pre">AffectedLayer</span></code> and
+<code class="docutils literal notranslate"><span class="pre">RenderTriggers</span></code>.</p>
+<p>Currently only
+<code class="docutils literal notranslate"><span class="pre">BoxCollider</span></code>,<code class="docutils literal notranslate"><span class="pre">Sphere</span> <span class="pre">Collider</span></code>,<code class="docutils literal notranslate"><span class="pre">BoxCollider2D</span></code>and
+<code class="docutils literal notranslate"><span class="pre">CircleCollider</span></code> are supported.</p>
+</div>
+<div class="section" id="bootmode">
+<h3>BootMode<a class="headerlink" href="#bootmode" title="Permalink to this headline">¶</a></h3>
+<p>If the <code class="docutils literal notranslate"><span class="pre">BootMode</span> <span class="pre">==Collision</span> <span class="pre">Boot</span></code> , if the object is in the
+<code class="docutils literal notranslate"><span class="pre">Affected</span> <span class="pre">Layer</span></code>(e.g. Enemy), the fireball will be triggered and
+goes to next state <code class="docutils literal notranslate"><span class="pre">OnSkillPlaying()</span></code> for <code class="docutils literal notranslate"><span class="pre">playtime</span></code>,else if the
+<code class="docutils literal notranslate"><span class="pre">BootMode</span> <span class="pre">==Position</span> <span class="pre">Boot</span></code>, it will not be triggered until it arrives
+the position it was setted (no matter it’s a directional skill or
+tracking skill)</p>
+<p>So what’s <em>EmitObj Relation</em>?</p>
+</div>
+<div class="section" id="emitobjrelation">
+<h3>EmitObjRelation<a class="headerlink" href="#emitobjrelation" title="Permalink to this headline">¶</a></h3>
+<p>Take the wizard’s expamble again , the wizard may emit multiple fireball
+with different speed at the same time , now the problem is if one
+fireball was triggered,should the others be triggered?</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">Dependent</span></code>,that means one triggered all , one emitobj triggered
+will cause all emitobjs to be triggered.Else(<code class="docutils literal notranslate"><span class="pre">Independent</span></code>), one
+emitobj cannot be triggered by other emit obj.</p>
+<p>Now what happened after one fireball was triggered?</p>
+<p>The fireball will render the objs inside its collider( BoxCollider or
+SphereCollider),and takes them as the input <code class="docutils literal notranslate"><span class="pre">objs</span></code>to the
+<code class="docutils literal notranslate"><span class="pre">OnSkillPlaying(List&lt;GameObject&gt;</span> <span class="pre">objs)</span></code>.This function will be called
+in every fixedUpdate for the length of <code class="docutils literal notranslate"><span class="pre">PlayTime</span></code>,as long as one
+emitobj is triggered.</p>
+</div>
+<div class="section" id="rendertriggers">
+<h3>RenderTriggers<a class="headerlink" href="#rendertriggers" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Render</span> <span class="pre">Triggers</span></code> is just saying wheather the <code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> will
+render triggers( not only collider) if it’s triggered. <code class="docutils literal notranslate"><span class="pre">Collider</span></code> is
+yes, <code class="docutils literal notranslate"><span class="pre">Ignore</span></code> is no, <code class="docutils literal notranslate"><span class="pre">UseGlobal</span></code> is not recommended.</p>
+</div>
+<div class="section" id="when-will-the-emitobj-be-triggered">
+<h3>When will the EmitObj be triggered?<a class="headerlink" href="#when-will-the-emitobj-be-triggered" title="Permalink to this headline">¶</a></h3>
+<p>Note that the emitobj can be triggered in two ways.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BootMode</span> <span class="pre">==</span> <span class="pre">Position</span> <span class="pre">Boot</span></code> and arrive the position <code class="docutils literal notranslate"><span class="pre">endPos</span></code>
+setted in <code class="docutils literal notranslate"><span class="pre">GetComponent&lt;EmitObj&gt;</span></code> attached.</p></li>
+</ul>
+<p>Thus, <code class="docutils literal notranslate"><span class="pre">endPos</span></code> must be setted in <code class="docutils literal notranslate"><span class="pre">EmitObj</span></code> if it’s a collision boot.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BootMode</span> <span class="pre">==</span> <span class="pre">Collision</span> <span class="pre">Boot</span></code> and was triggered by some gameobject
+in <code class="docutils literal notranslate"><span class="pre">AffectedLayer</span></code></p></li>
+<li><p>exceeds the <code class="docutils literal notranslate"><span class="pre">emitTime</span></code> setted in the <code class="docutils literal notranslate"><span class="pre">EmitObj</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="the-condition-of-entering-onskillplaying">
+<h3>The condition of entering OnSkillPlaying()<a class="headerlink" href="#the-condition-of-entering-onskillplaying" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>one of the <code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> are triggered</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EmitObjPrefabs.size</span> <span class="pre">==</span> <span class="pre">0</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="other-properties">
+<h2>Other properties<a class="headerlink" href="#other-properties" title="Permalink to this headline">¶</a></h2>
+<p>Other properties’s meaning can be checked in this table.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 62%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Filled</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NickName</p></td>
+<td><p>Just for a easy
+recognition(e.g. NickName Boom for Skill
+fire)</p></td>
+<td><p>Not
+Required</p></td>
+</tr>
+<tr class="row-odd"><td><p>CD</p></td>
+<td><p>CoolDown of this skill node</p></td>
+<td><p>Not
+Required</p></td>
+</tr>
+<tr class="row-even"><td><p>LV</p></td>
+<td><p>Level of this skill node</p></td>
+<td><p>Not
+Required</p></td>
+</tr>
+<tr class="row-odd"><td><p>Icon</p></td>
+<td><p>Icon of this node</p></td>
+<td><p>Not
+Required</p></td>
+</tr>
+<tr class="row-even"><td><p>Sing Time</p></td>
+<td><p>time of executing <code class="docutils literal notranslate"><span class="pre">OnSkillSinging()</span></code></p></td>
+<td><p>Required</p></td>
+</tr>
+<tr class="row-odd"><td><p>Play Time</p></td>
+<td><p>time of executing
+`
+<cite>OnSkillPlaying(List&lt;GameObject&gt; objs)`</cite></p></td>
+<td><p>Required</p></td>
+</tr>
+<tr class="row-even"><td><p>Interrupt
+Time</p></td>
+<td><p>time of executing <code class="docutils literal notranslate"><span class="pre">OnSkillStopping()</span></code></p></td>
+<td><p>Required</p></td>
+</tr>
+<tr class="row-odd"><td><p>Exit Time</p></td>
+<td><p>time of executing <code class="docutils literal notranslate"><span class="pre">OnSkillExiting()</span></code></p></td>
+<td><p>Required</p></td>
+</tr>
+<tr class="row-even"><td><p>Body Effects</p></td>
+<td><p>Some Effects that may be played on the
+character during the execution of this
+skill</p></td>
+<td><p>Not
+Required</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="how-to-create-a-skill-node">
+<h2>How to create a Skill Node?<a class="headerlink" href="#how-to-create-a-skill-node" title="Permalink to this headline">¶</a></h2>
+<p>SkillNode can only be created in a NodeLib.</p>
+<p>Open <em>Window-&gt; Skill Lib</em> and dock it.</p>
+<p>Assumed you already has a NodeLib tagged Human as following.</p>
+<div class="figure align-default">
+<img alt="1517557883474" src="_images/1517557883474.png" />
+</div>
+<p>Press <em>Create SkillNode underTag</em></p>
+<div class="figure align-default">
+<img alt="1517558044269" src="_images/1517558044269.png" />
+</div>
+<p>Set the SkillName , SkillType,NodeType.<em>They can only be setted once.</em></p>
+<p>The Node script will be created under the folder</p>
+<p><code class="docutils literal notranslate"><span class="pre">Assets\The</span> <span class="pre">Skill\UserData\Human\Nodes</span></code> with the name <code class="docutils literal notranslate"><span class="pre">Run.cs</span></code></p>
+<div class="figure align-default">
+<img alt="1517558314624" src="_images/1517558314624.png" />
+</div>
+<p>The Node object will be created under the folder</p>
+<p><code class="docutils literal notranslate"><span class="pre">Assets\The</span> <span class="pre">Skill\UserData\Human\Nodes\instances</span></code> with the name
+<code class="docutils literal notranslate"><span class="pre">SkillModel_Run.asset</span></code></p>
+<div class="figure align-default">
+<img alt="1517558354800" src="_images/1517558354800.png" />
+</div>
+<p>if selected, you can view all the properties in the inspector.</p>
+<p>Drag and drop it into the EditorWindow <code class="docutils literal notranslate"><span class="pre">Skill</span> <span class="pre">Lib</span></code> , then the lib will
+have this node.</p>
+<p>Then we goes to the script.</p>
+<div class="figure align-default">
+<img alt="1517558875737" src="_images/1517558875738.png" />
+</div>
+<p>Currently, <code class="docutils literal notranslate"><span class="pre">Test</span></code> inherits from <code class="docutils literal notranslate"><span class="pre">SkillNode</span></code>,which means you have all
+the functionality above while you can still define how your skillnode
+<code class="docutils literal notranslate"><span class="pre">Fly</span></code> look like.</p>
+<p>You can add more variables and functions ,get the AttributeTable by
+<code class="docutils literal notranslate"><span class="pre">attributes</span></code>(which is already defined in the baseClass), get the
+gameobject owning this node by <code class="docutils literal notranslate"><span class="pre">attributes.target</span></code> (then you almost
+grasp everything you need in your hand),which is quite handy,right?</p>
+<p>You’d better rewrite your <code class="docutils literal notranslate"><span class="pre">TriggerConditon()</span></code>, e.g to detect wheather
+mana enough for this skill.</p>
+<p>Notice you should also implement other 5 functions.</p>
+<p>I would talk about <code class="docutils literal notranslate"><span class="pre">EmitObjsWithITween()</span></code>.This function will be called
+once to emit <code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code>, i recommend using <a class="reference external" href="itween.pixelplacement.com">ITween</a> as it’s
+powerful and simple enough.</p>
+<p>Ever the <code class="docutils literal notranslate"><span class="pre">EmitingUpdate()</span></code> will execute at a fixedUpdate rate as long
+as none of the <code class="docutils literal notranslate"><span class="pre">EmitObjTemps</span></code> are triggered.</p>
+<p>Also i hope you can make use of <code class="docutils literal notranslate"><span class="pre">skillData</span></code>, which is from
+<code class="docutils literal notranslate"><span class="pre">SkillEquipManager.PlaySkill(string</span> <span class="pre">skName,</span> <span class="pre">Hashtable</span> <span class="pre">skillData)</span></code>.</p>
+<p>This gives you a lot space to determine what other data you required
+when playing a skill.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nodeLib.html" class="btn btn-neutral float-right" title="NodeLib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lifecycle.html" class="btn btn-neutral float-left" title="LifeCycle of a Skill Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, FangLiu Dong
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

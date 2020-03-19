@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SkillEquipManager &amp;&amp; PracticalNode &mdash; The Skill 1.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Last Step: Simple scripts that you need to create" href="last_step.html" />
+    <link rel="prev" title="SkillLearningTree &amp;&amp; LTNode" href="SkillLearningTree.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> The Skill
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="brief_intro.html">Brief Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detail.html">Detailed description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skill_behave.html">What may a skill behave? (Not essential but helpful)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Structure of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">WorkFlow of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attribute_table.html">Description: AttributeTable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lifecycle.html">LifeCycle of a Skill Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skillNode.html">SkillNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodeLib.html">NodeLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillLearningTree.html">SkillLearningTree &amp;&amp; LTNode</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SkillEquipManager &amp;&amp; PracticalNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="last_step.html">Last Step: Simple scripts that you need to create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Expected acts and Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The Skill</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>SkillEquipManager &amp;&amp; PracticalNode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/SkillEquipMgr.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="skillequipmanager-practicalnode">
+<h1>SkillEquipManager &amp;&amp; PracticalNode<a class="headerlink" href="#skillequipmanager-practicalnode" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SkillEquipManager</span></code> is a manager class of control the lifecycle of
+the skills.The basic unit of <code class="docutils literal notranslate"><span class="pre">SkillEquipManager</span></code> is
+<code class="docutils literal notranslate"><span class="pre">PracticalNode</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PracticalNode.cs</span></code> is already created and tested and it’s not
+expected to be modified.<code class="docutils literal notranslate"><span class="pre">PracticalNode</span></code> is a class “packaing”
+<code class="docutils literal notranslate"><span class="pre">LTNode</span></code> and it adds some bool state variable such
+as<code class="docutils literal notranslate"><span class="pre">isTriggering</span></code>,<code class="docutils literal notranslate"><span class="pre">isTriggered</span></code>,<code class="docutils literal notranslate"><span class="pre">isPlaying</span></code> and so on. The
+state of the <code class="docutils literal notranslate"><span class="pre">PracticalNode</span></code> is managed by the
+<code class="docutils literal notranslate"><span class="pre">SkillEquipManager</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SkillEquipManager</span></code> will be automatically loaded to the gameobject
+when coming to play mode.</p></li>
+</ul>
+<div class="figure align-default">
+<img alt="1517706621158" src="_images/1517706621158.png" />
+</div>
+<p>Though the <code class="docutils literal notranslate"><span class="pre">PracticalNode</span></code> has state variables, you’d better use the
+function <code class="docutils literal notranslate"><span class="pre">SkillEquipManager.checkStatus(string</span> <span class="pre">skillName)</span></code> supported
+to query the state of them.</p>
+<p>It will return enum state variables such as
+<code class="docutils literal notranslate"><span class="pre">SkillStatus.NonExist</span></code>,<code class="docutils literal notranslate"><span class="pre">SkillStatus.NonActivated</span></code>,<code class="docutils literal notranslate"><span class="pre">SkillStatus.Playing</span></code>,<code class="docutils literal notranslate"><span class="pre">SkillStatus.Free</span></code>
+and <code class="docutils literal notranslate"><span class="pre">SkillStatus.CoolDowning</span></code>.</p>
+<ul class="simple">
+<li><p>If a skill is not activated(<code class="docutils literal notranslate"><span class="pre">NonActivated</span></code>), it cannot be played(
+to activate, go to the tree node ).</p></li>
+<li><p>If a skill is cooldowned and ready for trigger, it is <code class="docutils literal notranslate"><span class="pre">Free</span></code>.</p></li>
+<li><p>If a skill is exited and cooldowning , it is <code class="docutils literal notranslate"><span class="pre">CoolDowning</span></code>.</p></li>
+<li><p>else, a skill is <code class="docutils literal notranslate"><span class="pre">Playing</span></code>.</p></li>
+</ul>
+<p>Besides,you can set and get your skill scripts’ properties using the
+functions<code class="docutils literal notranslate"><span class="pre">SkillEquipManager.setProperty&lt;T&gt;(string</span> <span class="pre">skName,string</span> <span class="pre">property,T</span> <span class="pre">value,bool</span> <span class="pre">useBase)</span></code>,<code class="docutils literal notranslate"><span class="pre">SkillEquipManager.getProperty&lt;T&gt;(string</span> <span class="pre">skName,string</span> <span class="pre">property,T</span> <span class="pre">value,bool</span> <span class="pre">useBase)</span></code>.</p>
+<p>Further documentation can be checked in another file
+<code class="docutils literal notranslate"><span class="pre">Documentation</span> <span class="pre">for</span> <span class="pre">The</span> <span class="pre">Skil</span></code>.</p>
+<p>A lots of functions are supported for developers in
+<code class="docutils literal notranslate"><span class="pre">SkillEquipManager.cs</span></code>.</p>
+<p>And you can access them by <code class="docutils literal notranslate"><span class="pre">GetComponent&lt;TheSkill&gt;().equip</span></code> to get the
+manager and use the functions.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="last_step.html" class="btn btn-neutral float-right" title="Last Step: Simple scripts that you need to create" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SkillLearningTree.html" class="btn btn-neutral float-left" title="SkillLearningTree &amp;&amp; LTNode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, FangLiu Dong
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

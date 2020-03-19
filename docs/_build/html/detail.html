@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Detailed description &mdash; The Skill 1.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="What may a skill behave? (Not essential but helpful)" href="skill_behave.html" />
+    <link rel="prev" title="Brief Introduction" href="brief_intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> The Skill
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="brief_intro.html">Brief Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Detailed description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skill_behave.html">What may a skill behave? (Not essential but helpful)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Structure of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">WorkFlow of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attribute_table.html">Description: AttributeTable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lifecycle.html">LifeCycle of a Skill Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skillNode.html">Description: SkillNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodeLib.html">Description: NodeLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillLearningTree.html">Description: SkillLearningTree &amp;&amp; LTNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillEquipMgr.html">Description: SkillEquipManager &amp;&amp; PracticalNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="last_step.html">Last Step: Simple scripts that you need to create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Expected</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html#notes">Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The Skill</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Detailed description</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/detail.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="detailed-description">
+<h1>Detailed description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h1>
+<p>The Skill is a node-based visual skill development framework that provides Unity game developers complete and automated character skills process management, CoolDown control, skill statusquerying (Playing, NonExist, NonActived, Free) and acquisition and setting ofskill-dependent variables.</p>
+<p>In The Skill, you can customize the composition of the character attribute table you need. Another advantage of TheSkill is that it enables the association and mutual referencing of character attributes and character skills.</p>
+<p>In addition to that, The Skill offers agreat deal of freedom in key-value pairs over skill code calls (<em>i.e. playSkill (string skillName, HashtableskillData</em>), skillData can be referenced and retrieved directly in code with the same name as the skill.</p>
+<p>In The Skill each skill is a node, passive skills will be automatically managed and triggered, and active skills requirethe developer to write additional trigger script for skills call. In addition,each skill is divided into both directional and non-directional skills.</p>
+<p>Each skill, inherited from the parent class SkillNode, and SkillNode inherited from Scriptableobject, so it is an entitydata, but also can have its own member variables and member functions.</p>
+<p>This setting allows the skill node to dothe integration of data and code. In this plugin, some member variables of the base class SkillNode will appear in the Inspector, you need to set them to make the skills perform as expected. The extra variables you need should be declared in the code with the same name as the skill, which will also appear under the ChildProperties in the Inspector.</p>
+<p>You will also need to rewrite 6 functions in order to achieve the skills effect you want.</p>
+<p>Therefore, skill nodes have a very high degree of freedom, and those small limitations (such as setting some base variables) maintain the normal operation of the node.</p>
+<p>More interestingly, since each node is data, you can delete, copy, or move just like any Prefab does. The advantage isthat, combined with our <code class="docutils literal notranslate"><span class="pre">SkillNodeLib</span></code> (that is, the template library), you can freely combine these nodes in accordance with your needs into the collection you want, such as human skills template library, or divided according to occupation, magician Skill template library 1, magician skills template library2, warrior skills template library 1 ……</p>
+<p>All these operations are visual.</p>
+<p><strong>The only code you need to cover throughout the system is the node code which has the same name with the skill and the skill invocation script</strong>.</p>
+<p>Of course, for each specific character, their skill tree may come from the same template, but the specific skill progress may not be the same. So in The Skill, the last thing important is <code class="docutils literal notranslate"><span class="pre">SkillLearningTree</span> <span class="pre">(skill</span> <span class="pre">tree)</span></code>.To generate a skill tree from the <code class="docutils literal notranslate"><span class="pre">SkillNodeLib(skill</span> <span class="pre">lib)</span></code>,all you have to do is to click a button.</p>
+<p>However, such a skill tree does not have any parent-child relationship between nodes, and each node is independent. By right-clicking on the node, you can easily establish the relationship between the nodes.</p>
+<p>This parent-child relationship has only one effect. When a childnode is not activated, the parent node will also be forcibly deactivated and will not respond to code calls.</p>
+<p>In practice, a character can only invoke the skill normally if it has both a <code class="docutils literal notranslate"><span class="pre">attribute</span> <span class="pre">table</span></code> and a <code class="docutils literal notranslate"><span class="pre">skill</span> <span class="pre">tree</span></code>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="skill_behave.html" class="btn btn-neutral float-right" title="What may a skill behave? (Not essential but helpful)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brief_intro.html" class="btn btn-neutral float-left" title="Brief Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, FangLiu Dong
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

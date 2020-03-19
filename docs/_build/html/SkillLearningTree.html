@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SkillLearningTree &amp;&amp; LTNode &mdash; The Skill 1.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SkillEquipManager &amp;&amp; PracticalNode" href="SkillEquipMgr.html" />
+    <link rel="prev" title="NodeLib" href="nodeLib.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> The Skill
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="brief_intro.html">Brief Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detail.html">Detailed description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skill_behave.html">What may a skill behave? (Not essential but helpful)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Structure of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">WorkFlow of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attribute_table.html">Description: AttributeTable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lifecycle.html">LifeCycle of a Skill Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skillNode.html">SkillNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodeLib.html">NodeLib</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SkillLearningTree &amp;&amp; LTNode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description-learningtreeeditor">Description: LearningTreeEditor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SkillEquipMgr.html">SkillEquipManager &amp;&amp; PracticalNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="last_step.html">Last Step: Simple scripts that you need to create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Expected acts and Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The Skill</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>SkillLearningTree &amp;&amp; LTNode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/SkillLearningTree.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="skilllearningtree-ltnode">
+<h1>SkillLearningTree &amp;&amp; LTNode<a class="headerlink" href="#skilllearningtree-ltnode" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">SkillLearningTree</span></code> is a tree that describes the parent-child relation
+between <code class="docutils literal notranslate"><span class="pre">SkillNodes</span></code>.It can only be generated from a <code class="docutils literal notranslate"><span class="pre">SkillNodeLib</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">NodeLibEditor</span></code>(<em>Window-&gt; Skill Lib</em>).</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">SkillLearningTree</span></code> can be visualized in the
+<code class="docutils literal notranslate"><span class="pre">TreeEditor</span></code>(<em>Window-&gt;Skill Tree</em>).</p>
+<p>The basic unit of <code class="docutils literal notranslate"><span class="pre">SkillLearningTree</span></code> is
+<code class="docutils literal notranslate"><span class="pre">LTNode</span></code>(i.e. LearningTree Node).</p>
+<p>s<img alt="1517627410420" src="_images/1517627410420.png" /></p>
+<p>Based on<code class="docutils literal notranslate"><span class="pre">SkillNode</span></code>,<code class="docutils literal notranslate"><span class="pre">LTNode</span></code> has parent/child nodes and
+<code class="docutils literal notranslate"><span class="pre">activate/nonactivate</span></code> property to descripe wheather a skill has been
+acquired.</p>
+<p>A<code class="docutils literal notranslate"><span class="pre">LTNode</span></code> can be <code class="docutils literal notranslate"><span class="pre">Activated</span></code> only when all of its child nodes are
+<code class="docutils literal notranslate"><span class="pre">Activated</span></code>.</p>
+<div class="figure align-default">
+<img alt="1517628437759" src="_images/1517628437759.png" />
+</div>
+<p>When a tree is generated, it copys all the nodes from the library and
+saves them as subassets which prevents the data inconsistence over the
+library when modifying multiple trees from the same library.</p>
+<p>The tree will then create LTNodes based on these SkillNodes.</p>
+<p>From now on, if you want to modify anything over this tree,you shall not
+go to the library but only working on your tree asset.</p>
+<div class="section" id="description-learningtreeeditor">
+<h2>Description: LearningTreeEditor<a class="headerlink" href="#description-learningtreeeditor" title="Permalink to this headline">¶</a></h2>
+<p>Now Let’s talk about the Tree Editor <code class="docutils literal notranslate"><span class="pre">Skill</span> <span class="pre">Tree</span></code>.</p>
+<p>It has following features:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Control+</span> <span class="pre">middle</span> <span class="pre">mouse</span></code> to scale the graph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">middle</span> <span class="pre">mouse</span> <span class="pre">drag</span></code> to move the graph.</p></li>
+<li><p>click <code class="docutils literal notranslate"><span class="pre">Hierachy</span> <span class="pre">Drag</span></code> to drag a subtree rather than one single
+node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">right</span> <span class="pre">click</span></code> on a node to establish parent-child relation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">control+</span> <span class="pre">right</span> <span class="pre">click</span></code> to break parent- child relations( idea from
+<em>Shaderforge</em>)</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">details</span></code> to fold out/ in the node window.(It could be more
+cleaner and tighter).</p></li>
+</ul>
+<div class="figure align-default">
+<img alt="U1XOXG831NF990X1&#64;93E1" src="_images/U1XOXG831NF990X1&#64;93E1.png" />
+</div>
+<div class="figure align-default">
+<img alt="1517890926417" src="_images/1517890926417.png" />
+</div>
+<p>Notice that one <code class="docutils literal notranslate"><span class="pre">SkillLearningTree</span></code> can only be uniquely assigned for
+one skill system(<em>The Skill</em>).</p>
+<p>If requiring multiple systems to use the same tree, you should make
+copies of tree and assign to the systems respectively.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SkillEquipMgr.html" class="btn btn-neutral float-right" title="SkillEquipManager &amp;&amp; PracticalNode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nodeLib.html" class="btn btn-neutral float-left" title="NodeLib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, FangLiu Dong
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

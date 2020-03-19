@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LifeCycle of a Skill Node &mdash; The Skill 1.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SkillNode" href="skillNode.html" />
+    <link rel="prev" title="Description: AttributeTable" href="Attribute_table.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> The Skill
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="brief_intro.html">Brief Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detail.html">Detailed description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skill_behave.html">What may a skill behave? (Not essential but helpful)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Structure of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">WorkFlow of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attribute_table.html">Description: AttributeTable</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LifeCycle of a Skill Node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#brief-graph">Brief Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-graph">Full Graph</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="skillNode.html">SkillNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodeLib.html">NodeLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillLearningTree.html">SkillLearningTree &amp;&amp; LTNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillEquipMgr.html">SkillEquipManager &amp;&amp; PracticalNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="last_step.html">Last Step: Simple scripts that you need to create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Expected acts and Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The Skill</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>LifeCycle of a Skill Node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lifecycle.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lifecycle-of-a-skill-node">
+<h1>LifeCycle of a Skill Node<a class="headerlink" href="#lifecycle-of-a-skill-node" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="brief-graph">
+<h2>Brief Graph<a class="headerlink" href="#brief-graph" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="1519786859764" src="_images/1519786859764.png" />
+</div>
+</div>
+<div class="section" id="full-graph">
+<h2>Full Graph<a class="headerlink" href="#full-graph" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<img alt="LifeCycle" src="_images/LifeCycle01.png" />
+<p class="caption"><span class="caption-text">LifeCycle</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="skillNode.html" class="btn btn-neutral float-right" title="SkillNode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Attribute_table.html" class="btn btn-neutral float-left" title="Description: AttributeTable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, FangLiu Dong
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

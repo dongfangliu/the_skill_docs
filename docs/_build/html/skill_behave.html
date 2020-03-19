@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>What may a skill behave? (Not essential but helpful) &mdash; The Skill 1.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Structure of The Skill" href="structure.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="detail.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> The Skill
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="brief_intro.html">Brief Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">What may a skill behave? (Not essential but helpful)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Structure of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">WorkFlow of <em>The Skill</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attribute_table.html">Description: AttributeTable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lifecycle.html">LifeCycle of a Skill Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skillNode.html">Description: SkillNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodeLib.html">Description: NodeLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillLearningTree.html">Description: SkillLearningTree &amp;&amp; LTNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SkillEquipMgr.html">Description: SkillEquipManager &amp;&amp; PracticalNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="last_step.html">Last Step: Simple scripts that you need to create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Expected</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html#notes">Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The Skill</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>What may a skill behave? (Not essential but helpful)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/skill_behave.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="what-may-a-skill-behave-not-essential-but-helpful">
+<h1>What may a skill behave? (Not essential but helpful)<a class="headerlink" href="#what-may-a-skill-behave-not-essential-but-helpful" title="Permalink to this headline">¶</a></h1>
+<p>There arebasically two type of skills, active skills and passive skills. The difference iswho triggers the skill , the former is triggered by user, the latter istriggered automatically under certain situations.</p>
+<p>Skills can also bedivided into point type and non-point type, the difference between the two isthat the former has the characteristics of tracking objects.</p>
+<p>So let’s imaginea classic wizard casting a fireball on Goblins to see what a skill involves.</p>
+<p>First of all,you can imagine an old Master wielding his staff singing (that is, what we aretalking about singing), maybe the staff will flash, which will last for sometime. If during this time he was attacked, piu~, the fireball went out, theskills were interrupted, so the skills had to end.</p>
+<p>Well, aside frombeing interrupted, suppose the singing ended smoothly, we can see a fireballflying from the top of the staff, hit the body of the Goblin, Goblin’s body lita flame, And Goblin lost a lot of health. Now is the end of the skill.</p>
+<p>Okay, let’s sum it up.</p>
+<p>First we see that there are 3 subjects, mages, fireballs, and objects to be hit by thefireball (maybe Goblins moved around) throughout the process.</p>
+<p>I noticed that the mage himself needs to complete a series of actions (animations) in the release of his skill, his status changes (consuming his mana ?), He needs tofly a fireball and the fireball hits the Goblins, if this is a non-point typeof skills, then the fireball may hit the stone (Goblin moved), the stone will not hurt (this involves the skills that can affect those objects, the enemy?Friendly? Or no difference?) If this is a point-type skills, then the fireball will catch up the target. When a fireball hits a goblin, the goblin can fall or suffer a continuous injuration (damage is settled).</p>
+<p>Let’s tidy up the whole process.</p>
+<p>Cooling StateEnd -&gt; Skill Trigger -&gt; Skill Singing (may be interrupted) -&gt; Emittingan object to a location or an object -&gt; Emission is triggered -&gt; Skill isreleased (may last for a while) - &gt; Skills exit.</p>
+<p>What are the elements involved?</p>
+<p>Character’s own properties (mana amount), character animation, some particle effects (light onthe staff, fireball, goblin flame), skill type (point or not, active or passive), the launch of the object And the extent of its impact, cooldown, as well as the time of each stage. . Oh, quite complicated, right?</p>
+<p>In a word we can say that the whole system can be divided into three parts: what happened to the mage (position movement, animation, state change), what happened to the fireball going out (getting smaller?), What happened to the object.</p>
+<p>The case of mage is over, what about warriors ? Warriors may emit nothing.It’s okay.</p>
+<p>All other final questionscome down to what you want to do at what point throughout the process.</p>
+<p>Above is only a single skill, we can imagine a character has a set of skills, Skills that Terran and Mozu can learn are completely different. For developers, we always go through a process of creation to discard. We are not sure which skills a certain character will have. If we wrote it all in one piece of code,it would simply be a nightmire of paste, delete, and prone to bug .</p>
+<p>And that’s exactly why I wrote this system, to make the creation process of skills tidy ,organized and reusable.</p>
+<p>So we have a skill library, similar to a template library, you can create a library, add or delete some skills, change some of the skills of the property or code, you can add an icon for each skill for you to quickly identify it. In addition, we do the first letter sorting on the library.</p>
+<p>You can delete this skill library directly, this will not affect any skills node (because we only clone a node into it). This means you can do a lot of trying without worrying about breaking other data.</p>
+<p>The template library, of course, does not directly lead to the application, the skill library just said that we may have what skills may be used, but the actual problem is what do the skills tree look like?</p>
+<p>What skills are bright, which skills are gray, Which one to learn first to unlock the next skill, what is the level of skills and so on…</p>
+<p>So in addition to that, I consider a little about the parent-child relations between skills. Because the premise of using the skills is we activated/learned them, and normally the premise of learning a skill is that we learned other skills. So I also simply provide a skill tree used to constrain these relationships, which can be visually constructed.</p>
+<p>This is still a step far from the practical application , that is, what’s the status of the skills? Is it cooling or still being cast ? skills are not acquired or just simply do not exist?</p>
+<p>I’ve provided completeand automated character skills process management, CoolingDown control, skillstatus querying (Playing, NonExist, NonActived, Free) and acquisition andsetting of skill-dependent variables.</p>
+<p>In a word, this is the process for me to mapping out this skill system, hope this can give you a better understanding over this skill system.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structure.html" class="btn btn-neutral float-right" title="Structure of The Skill" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="detail.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, FangLiu Dong
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
